@@ -27,7 +27,12 @@ export function App() {
         />
       </div>
       <div>
-        <button onClick={handleButtonClick}>Open Modal</button>
+        <button
+          className="py-2 px-4 font-heading text-center bg-modal-100 text-spi-violet-100 border rounded-lg border-spi-violet-100"
+          onClick={handleButtonClick}
+        >
+          Open Modal
+        </button>
         {showModal && (
           <Modal
             title="My Modal"
