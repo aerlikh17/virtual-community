@@ -7,23 +7,24 @@ interface TopNavBarProps {
   onTopMenuItemClick: (navItem: string) => void;
 }
 
+// Defining a functional component called TopNavBar that receives onTopMenuItemClick function as a prop
 export default function TopNavBar({ onTopMenuItemClick }: TopNavBarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState("");
   const [isLeftNavVisible, setIsLeftNavVisible] = useState(true);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(!isOpen); // Toggling the isOpen state variable to its opposite value using setIsOpen function
     setActiveSubmenu("");
   };
 
   const handleSubmenuClick = (navItem: string) => {
-    setActiveSubmenu(activeSubmenu === navItem ? "" : navItem);
+    setActiveSubmenu(activeSubmenu === navItem ? "" : navItem); // Toggling the activeSubmenu state variable based on whether it's already active or not
   };
 
   const handleTopMenuItemClick = (navItem: string) => {
-    onTopMenuItemClick(navItem);
-    setIsLeftNavVisible(true); // Show the left nav bar again when a top nav bar menu item is clicked on again
+    onTopMenuItemClick(navItem); // Calling the onTopMenuItemClick callback function with the navItem argument
+    setIsLeftNavVisible(true); // Setting the isLeftNavVisible state variable to true to show the left navbar
   };
 
   return (
